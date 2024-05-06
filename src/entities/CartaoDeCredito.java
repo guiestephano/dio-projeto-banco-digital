@@ -5,12 +5,12 @@ import java.time.LocalDate;
 public class CartaoDeCredito {
 	
 	private Long numero;
-	private int cvv;
+	private Integer cvv;
 	private LocalDate vencimento;
 	private String titular;
-	private String senha;
-	
-	public CartaoDeCredito(Long numero, int cvv, LocalDate vencimento, String titular, String senha) {
+	private Integer senha;
+
+	public CartaoDeCredito(Long numero, Integer cvv, LocalDate vencimento, String titular, Integer senha) {
 		super();
 		this.numero = numero;
 		this.cvv = cvv;
@@ -35,7 +35,7 @@ public class CartaoDeCredito {
 		return titular;
 	}
 	
-	public void pagar(String senha) {
+	public void pagar(Integer senha) {
 		if(this.senha == senha) {
 			System.out.println("Transação aceita.");
 		}
