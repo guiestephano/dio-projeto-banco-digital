@@ -4,6 +4,7 @@ public class Cliente {
 	
 	private String nome;
 	private Long cpf;
+	private CartaoDeCredito cartao;
 	
 	public Cliente(String nome, Long cpf) {
 		this.nome = nome;
@@ -22,6 +23,10 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
+	public void setCartao(CartaoDeCredito cartao) {
+		this.cartao = cartao;
+	}
+	
 	private void setCpf(Long cpf) {
 		if(cpf.toString().length() == 11) {
 			this.cpf = cpf;
@@ -33,6 +38,9 @@ public class Cliente {
 	
 	@Override
 	public String toString() {
-		return "nome: " + nome + " CPF: " + cpf;
+		if(cartao == null) {
+			return "nome: " + nome + " CPF: " + cpf;
+		}
+		return "nome: " + nome + " CPF: " + cpf + "Nº cartao: " + cartao.getNumero();
 	}
 }
